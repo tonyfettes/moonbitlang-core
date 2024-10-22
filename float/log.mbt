@@ -42,6 +42,14 @@ let logf_data : LogfData = {
   poly: [-0x1.00ea348b88334p-2, 0x1.5575b0be00b6ap-2, -0x1.ffffef20a4123p-2],
 }
 
+/// Computes the natural logarithm (ln) of a floating-point number.
+///
+/// Parameters:
+///
+/// - `self` : The floating-point number for which to compute the natural
+/// logarithm.
+///
+/// Returns the natural logarithm of the input floating-point number.
 pub fn ln(self : Float) -> Float {
   let mut ix : UInt = self.reinterpret_as_int().reinterpret_as_uint()
   if ix == 0x3f800000U {

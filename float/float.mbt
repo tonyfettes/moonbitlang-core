@@ -24,6 +24,14 @@ pub let min_value : Float = (0xFF7FFFFF).reinterpret_as_float()
 
 pub let min_positive : Float = (0x00800000).reinterpret_as_float()
 
+/// Returns the absolute value of the given floating-point number.
+///
+/// Parameters:
+///
+/// - `self` : The floating-point number for which the absolute value is to be
+/// calculated.
+///
+/// Returns the absolute value of the input floating-point number.
 pub fn abs(self : Float) -> Float {
   if self < 0.0 {
     -self
@@ -32,6 +40,13 @@ pub fn abs(self : Float) -> Float {
   }
 }
 
+/// Converts the floating-point number to its string representation.
+///
+/// Parameters:
+///
+/// - `self` : The floating-point number to be converted.
+///
+/// Returns the string representation of the floating-point number.
 pub fn to_string(self : Float) -> String {
   Show::to_string(self)
 }

@@ -61,6 +61,14 @@ let exp2f_data : Exp2fData = {
   ],
 }
 
+/// Computes the exponential function of a floating-point number.
+///
+/// Parameters:
+///
+/// - `self` : The floating-point number for which the exponential function is to
+/// be computed.
+///
+/// Returns the result of the exponential function as a floating-point number.
 pub fn exp(self : Float) -> Float {
   let xd = self.to_double()
   let abstop = top12(self) & 0x7ff
