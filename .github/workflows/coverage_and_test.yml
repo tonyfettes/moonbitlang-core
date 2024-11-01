@@ -1,0 +1,57 @@
+name: coverage_and_test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: install Moonbit CLI
+        run: |
+          curl -fsSL https://cli.moonbitlang.com/install/unix.sh | bash
+          echo "$HOME/.moon/bin" >> $GITHUB_PATH
+
+      - name: initial moon test
+        run: moon test --enable-coverage
+
+      - name: initial coverage report
+        run: |
+          moon coverage report -f summary > coverage_summary.txt
+
+          cat coverage_summary.txt >> "$GITHUB_STEP_SUMMARY"
+
+          moon coverage report -f coveralls
+
+      - name: coverage improvement
+        run: python scripts/main.py --api_key ${{ secrets.api_key }}
+
+      - name: get code changes
+        id: get_code_changes
+        run: |
+          git diff > changes.txt
+          test_code=$(cat changes.txt)
+          echo "test_code=$test_code" >> $GITHUB_ENV
+
+      - name: push comments
+        uses: peter-evans/create-or-update-comment@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit-sha: ${{ github.event.pull_request.head.sha }}
+          body: |
+            Here are the test code changes:
+            ```
+            ${{ env.test_code }}
+            ```
+          reaction-type: rocket
