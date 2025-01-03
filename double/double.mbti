@@ -38,6 +38,7 @@ impl Double {
   round(Double) -> Double
   signum(Double) -> Double
   to_string(Double) -> String
+  to_uint(Double) -> UInt
   trunc(Double) -> Double
 }
 
