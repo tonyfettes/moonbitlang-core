@@ -52,7 +52,8 @@ pub fn[K : Compare, V] SortedMap::contains(
 ///|
 /// Get the number of key-value pairs in the map.
 #alias(size, deprecated)
-pub fn[K, V] SortedMap::length(self : SortedMap[K, V]) -> Int {
+#alias(length, deprecated)
+pub fn[K, V] SortedMap::len(self : SortedMap[K, V]) -> Int {
   match self {
     Empty => 0
     Tree(_) as t => t.size

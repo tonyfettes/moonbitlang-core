@@ -33,16 +33,6 @@ fn[T] ArrayView::buf(self : ArrayView[T]) -> UninitializedArray[T] = "%arrayview
 fn[T] ArrayView::start(self : ArrayView[T]) -> Int = "%arrayview.start"
 
 ///|
-fn[T] ArrayView::len(self : ArrayView[T]) -> Int = "%arrayview.len"
-
-///|
-fn[T] ArrayView::make(
-  buf : UninitializedArray[T],
-  start : Int,
-  len : Int,
-) -> ArrayView[T] = "%arrayview.make"
-
-///|
 /// Returns the length (number of elements) of an array view.
 ///
 /// Parameters:
@@ -58,9 +48,15 @@ fn[T] ArrayView::make(
 ///   let view = arr[2:4]
 ///   inspect(view.length(), content="2")
 /// ```
-pub fn[T] ArrayView::length(self : ArrayView[T]) -> Int {
-  self.len()
-}
+#alias(length, deprecated)
+pub fn[T] ArrayView::len(self : ArrayView[T]) -> Int = "%arrayview.len"
+
+///|
+fn[T] ArrayView::make(
+  buf : UninitializedArray[T],
+  start : Int,
+  len : Int,
+) -> ArrayView[T] = "%arrayview.make"
 
 ///|
 /// Retrieves an element at the specified index from the array view.

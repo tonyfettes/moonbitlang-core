@@ -229,7 +229,8 @@ pub impl[K : Show] Show for HashSet[K] with output(self, logger) {
 ///|
 /// Get the number of keys in the set.
 #alias(size, deprecated)
-pub fn[K] HashSet::length(self : HashSet[K]) -> Int {
+#alias(length, deprecated)
+pub fn[K] HashSet::len(self : HashSet[K]) -> Int {
   self.size
 }
 

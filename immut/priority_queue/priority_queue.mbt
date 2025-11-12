@@ -294,7 +294,8 @@ pub fn[A] PriorityQueue::is_empty(self : PriorityQueue[A]) -> Bool {
 ///   inspect(queue.length(), content="0")
 ///   assert_eq(queue.push(1).length(), 1)
 /// ```
-pub fn[A] PriorityQueue::length(self : PriorityQueue[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] PriorityQueue::len(self : PriorityQueue[A]) -> Int {
   self.size
 }
 

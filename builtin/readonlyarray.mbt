@@ -104,7 +104,8 @@ pub fn[T] ReadOnlyArray::get(self : ReadOnlyArray[T], index : Int) -> T? {
 /// let arr : ReadOnlyArray[Int] = [1, 2, 3]
 /// inspect(arr.length(), content="3")
 /// ```
-pub fn[T] ReadOnlyArray::length(self : ReadOnlyArray[T]) -> Int {
+#alias(length, deprecated)
+pub fn[T] ReadOnlyArray::len(self : ReadOnlyArray[T]) -> Int {
   self.unsafe_reinterpret_to_fixed_array().length()
 }
 

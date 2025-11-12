@@ -352,7 +352,8 @@ pub fn[V] SortedSet::is_empty(self : SortedSet[V]) -> Bool {
 ///|
 /// Returns the number of elements in the set.
 #alias(size, deprecated)
-pub fn[V] SortedSet::length(self : SortedSet[V]) -> Int {
+#alias(length, deprecated)
+pub fn[V] SortedSet::len(self : SortedSet[V]) -> Int {
   self.size
 }
 

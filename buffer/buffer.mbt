@@ -74,7 +74,8 @@ fn Buffer::grow_if_necessary(self : Buffer, required : Int) -> Unit {
 ///   buf.write_string("Test")
 ///   inspect(buf.length(), content="8") // each char takes 2 bytes in UTF-16
 /// ```
-pub fn Buffer::length(self : Buffer) -> Int {
+#alias(length, deprecated)
+pub fn Buffer::len(self : Buffer) -> Int {
   self.len
 }
 

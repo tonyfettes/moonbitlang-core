@@ -81,7 +81,8 @@ pub fn[A] from_array(arr : ArrayView[A]) -> T[A] {
 ///|
 /// Get the length of the list.
 #deprecated("use `@list` instead")
-pub fn[A] T::length(self : T[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] T::len(self : T[A]) -> Int {
   loop (self, 0) {
     (Nil, len) => len
     (Cons(_, rest), acc) => continue (rest, acc + 1)

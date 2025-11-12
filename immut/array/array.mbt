@@ -173,7 +173,8 @@ pub fn[A] T::is_empty(self : T[A]) -> Bool {
 }
 
 ///|
-pub fn[A] T::length(self : T[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] T::len(self : T[A]) -> Int {
   self.size
 }
 

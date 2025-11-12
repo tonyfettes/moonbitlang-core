@@ -288,7 +288,8 @@ pub fn[K, V] HashMap::to_array(self : HashMap[K, V]) -> Array[(K, V)] {
 ///   inspect(map.length(), content="3")
 /// ```
 #alias(size, deprecated)
-pub fn[K, V] HashMap::length(self : HashMap[K, V]) -> Int {
+#alias(length, deprecated)
+pub fn[K, V] HashMap::len(self : HashMap[K, V]) -> Int {
   self.size
 }
 

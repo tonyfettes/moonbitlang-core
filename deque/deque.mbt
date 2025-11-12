@@ -437,7 +437,8 @@ pub fn[A] Deque::remove(self : Deque[A], index : Int) -> A {
 ///   dq.push_back(4)
 ///   inspect(dq.length(), content="4")
 /// ```
-pub fn[A] Deque::length(self : Deque[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] Deque::len(self : Deque[A]) -> Int {
   self.len
 }
 

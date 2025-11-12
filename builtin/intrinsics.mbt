@@ -1274,7 +1274,8 @@ pub fn Bytes::unsafe_get(self : Bytes, idx : Int) -> Byte = "%bytes.unsafe_get"
 ///   let empty = b""
 ///   inspect(empty.length(), content="0")
 /// ```
-pub fn Bytes::length(self : Bytes) -> Int = "%bytes_length"
+#alias(length, deprecated)
+pub fn Bytes::len(self : Bytes) -> Int = "%bytes_length"
 
 ///|
 /// Creates a new byte sequence of the specified length, where each byte is
@@ -1484,7 +1485,8 @@ pub fn[T] FixedArray::set(self : FixedArray[T], idx : Int, val : T) -> Unit = "%
 ///   let arr = FixedArray::make(3, 42)
 ///   inspect(arr.length(), content="3")
 /// ```
-pub fn[T] FixedArray::length(self : FixedArray[T]) -> Int = "%fixedarray.length"
+#alias(length, deprecated)
+pub fn[T] FixedArray::len(self : FixedArray[T]) -> Int = "%fixedarray.length"
 
 ///|
 /// Creates a new fixed-size array with the specified length, initializing all
@@ -1539,7 +1541,8 @@ pub fn[T] FixedArray::make(len : Int, init : T) -> FixedArray[T] = "%fixedarray.
 ///   inspect("".length(), content="0") // Empty string
 /// ```
 #alias(charcode_length, deprecated)
-pub fn String::length(self : String) -> Int = "%string_length"
+#alias(length, deprecated)
+pub fn String::len(self : String) -> Int = "%string_length"
 
 ///|
 /// Returns the UTF-16 code unit at the given index.

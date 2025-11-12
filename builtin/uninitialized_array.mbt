@@ -95,7 +95,8 @@ pub fn[T] UninitializedArray::sub(
 /// - `array` : The uninitialized array whose length is to be determined.
 ///
 /// Returns the length of the uninitialized array as an integer.
-pub fn[A] UninitializedArray::length(self : UninitializedArray[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] UninitializedArray::len(self : UninitializedArray[A]) -> Int {
   self.0.length()
 }
 

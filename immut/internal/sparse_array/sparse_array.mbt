@@ -264,7 +264,8 @@ pub fn[X] SparseArray::replace(
 ///|
 /// Return the size of a sparse array
 #alias(size, deprecated)
-pub fn[X] SparseArray::length(self : SparseArray[X]) -> Int {
+#alias(length, deprecated)
+pub fn[X] SparseArray::len(self : SparseArray[X]) -> Int {
   self.data.length()
 }
 

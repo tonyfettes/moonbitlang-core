@@ -54,12 +54,8 @@ fn BytesView::make(b : Bytes, start : Int, len : Int) -> BytesView = "%bytesview
 ///   let view = bytes[2:4]
 ///   inspect(view.length(), content="2")
 /// ```
-pub fn BytesView::length(self : BytesView) -> Int {
-  self.len()
-}
-
-///|
-fn BytesView::len(self : BytesView) -> Int = "%bytesview.len"
+#alias(length, deprecated)
+pub fn BytesView::len(self : BytesView) -> Int = "%bytesview.len"
 
 ///|
 /// Retrieves a byte from the view at the specified index.

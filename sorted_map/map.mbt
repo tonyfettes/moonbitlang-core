@@ -147,7 +147,8 @@ pub fn[K, V] SortedMap::is_empty(self : SortedMap[K, V]) -> Bool {
 ///|
 /// Returns the count of key-value pairs in the map.
 #alias(size, deprecated)
-pub fn[K, V] SortedMap::length(self : SortedMap[K, V]) -> Int {
+#alias(length, deprecated)
+pub fn[K, V] SortedMap::len(self : SortedMap[K, V]) -> Int {
   self.size
 }
 

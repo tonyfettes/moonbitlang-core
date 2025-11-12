@@ -382,7 +382,8 @@ pub impl[K : Show] Show for Set[K] with output(self, logger) {
 ///|
 /// Get the number of keys in the set.
 #alias(size, deprecated)
-pub fn[K] Set::length(self : Set[K]) -> Int {
+#alias(length, deprecated)
+pub fn[K] Set::len(self : Set[K]) -> Int {
   self.size
 }
 

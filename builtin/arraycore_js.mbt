@@ -94,7 +94,8 @@ pub fn[T] Array::new(capacity? : Int = 0) -> Array[T] {
 
 ///|
 /// Returns the number of elements in the array.
-pub fn[T] Array::length(self : Array[T]) -> Int = "%fixedarray.length"
+#alias(length, deprecated)
+pub fn[T] Array::len(self : Array[T]) -> Int = "%fixedarray.length"
 
 ///|
 fn[T] Array::unsafe_truncate_to_length(self : Array[T], new_len : Int) -> Unit {

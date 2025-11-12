@@ -336,7 +336,8 @@ fn[K : Eq, V] Node::remove_with_path(
 ///
 /// WARNING: this operation is `O(N)` in map size
 #alias(size, deprecated)
-pub fn[K, V] HashMap::length(self : HashMap[K, V]) -> Int {
+#alias(length, deprecated)
+pub fn[K, V] HashMap::len(self : HashMap[K, V]) -> Int {
   fn node_size(node) {
     match node {
       Leaf(_, _, bucket) => 1 + bucket.length()

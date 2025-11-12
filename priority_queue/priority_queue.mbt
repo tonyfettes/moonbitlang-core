@@ -186,7 +186,8 @@ fn[A : Compare] merges(x : Node[A]?) -> Node[A]? {
 }
 
 ///|
-pub fn[A] PriorityQueue::length(self : PriorityQueue[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] PriorityQueue::len(self : PriorityQueue[A]) -> Int {
   self.len
 }
 

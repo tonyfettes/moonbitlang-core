@@ -55,7 +55,8 @@ pub fn StringView::code_unit_at(self : StringView, index : Int) -> UInt16 {
 /// Returns the length of the view.
 /// 
 /// This method counts the charcodes(code unit) in the view and has O(1) complexity.
-pub fn StringView::length(self : StringView) -> Int {
+#alias(length, deprecated)
+pub fn StringView::len(self : StringView) -> Int {
   self.end() - self.start()
 }
 

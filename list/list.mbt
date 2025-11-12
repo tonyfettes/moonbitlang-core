@@ -149,7 +149,8 @@ pub fn[A] List::from_array(arr : ArrayView[A]) -> List[A] {
 
 ///|
 /// Get the length of the list.
-pub fn[A] List::length(self : List[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] List::len(self : List[A]) -> Int {
   loop (self, 0) {
     (Empty, len) => len
     (More(_, tail=rest), acc) => continue (rest, acc + 1)

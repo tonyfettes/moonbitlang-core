@@ -82,7 +82,8 @@ pub fn[A] Queue::clear(self : Queue[A]) -> Unit {
 ///   let queue : @queue.Queue[Int] = @queue.new()
 ///   assert_eq(queue.length(), 0)
 /// ```
-pub fn[A] Queue::length(self : Queue[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] Queue::len(self : Queue[A]) -> Int {
   self.length
 }
 

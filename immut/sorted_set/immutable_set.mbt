@@ -706,7 +706,8 @@ fn[A : Compare] SortedSet::split_bis(
 ///|
 /// Get the height of set.
 #alias(size, deprecated)
-pub fn[A] SortedSet::length(self : SortedSet[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] SortedSet::len(self : SortedSet[A]) -> Int {
   match self {
     Empty => 0
     Node(size~, ..) => size

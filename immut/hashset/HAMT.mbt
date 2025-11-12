@@ -176,7 +176,8 @@ fn[A : Eq] Node::remove_with_path(
 ///
 /// WARNING: this operation is `O(N)` in set size
 #alias(size, deprecated)
-pub fn[A] HashSet::length(self : HashSet[A]) -> Int {
+#alias(length, deprecated)
+pub fn[A] HashSet::len(self : HashSet[A]) -> Int {
   fn node_size(node) {
     match node {
       Leaf(_, bucket) => 1 + bucket.length()
